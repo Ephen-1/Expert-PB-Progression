@@ -72,7 +72,7 @@
 
           // Calculate ages & opacities
           const ages = active.map(g => (currentDate - new Date(g.dateStr)) / (1000 * 60 * 60 * 24));
-          const opacities = ages.map(age => Math.max(0.05, 0.60 * (1 - Math.pow(age / 60, 1.8))));
+          const opacities = ages.map(age => Math.max(0.05, 0.90 * (1 - Math.pow(age / 60, 1.5))));
 
           return {
             name: dStr,
@@ -115,7 +115,7 @@
                 hoverinfo: 'text',
                 mode: 'lines+markers',
                 type: 'scatter',
-                name: 'Frontier (All-Time PB)',
+                name: 'Best Games Frontier',
                 line: { color: '#00ff88', width: 2, shape: 'hv' },
                 marker: { symbol: 'circle', size: 4, color: '#00ff88' }
               }
@@ -127,8 +127,8 @@
           paper_bgcolor: '#121212',
           plot_bgcolor: '#1a1a1a',
           font: { color: '#e0e0e0', family: 'Arial, sans-serif' },
-          title: 'Minesweeper Progression (Client-Side Rendered)',
-          xaxis: { range: [100, 250], title: '3BV (Difficulty)', gridcolor: '#2a2a2a', zerolinecolor: '#444' },
+          title: 'Expert PB Progression (Last Updated: 17-08-2026)',
+          xaxis: { range: [100, 250], title: '3BV', gridcolor: '#2a2a2a', zerolinecolor: '#444' },
           yaxis: { range: [50, 150], title: 'Time (seconds)', gridcolor: '#2a2a2a', zerolinecolor: '#444' },
           legend: { x: 0.05, y: 0.98, font: { color: '#e0e0e0' } },
           sliders: [{
@@ -144,10 +144,10 @@
           updatemenus: [{
             type: 'buttons',
             showactive: false,
-            x: 0.05,
-            y: 1.15,
+            x: -0.05,
+            y: 1,
             buttons: [
-              { label: 'Play', method: 'animate', args: [null, { frame: { duration: 30, redraw: false }, fromcurrent: true }] },
+              { label: 'Play', method: 'animate', args: [null, { frame: { duration: 75, redraw: false }, fromcurrent: true }] },
               { label: 'Pause', method: 'animate', args: [[null], { mode: 'immediate', frame: { duration: 0, redraw: false } }] }
             ]
           }]
