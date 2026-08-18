@@ -95,10 +95,10 @@
                   cmax: 60,
                   opacity: opacities,
                   colorbar: {
-                    title: { text: "Game Age (Days)", font: { color: "#e0e0e0" } },
+                    title: { text: "Game Age (Days)\n", font: { color: "#e0e0e0" } },
                     tickfont: { color: "#e0e0e0" },
                     tickvals: [0, 20, 40, 60],
-                    ticktext: ["0d (New)", "20d", "40d", "60d (Expired)"],
+                    ticktext: ["0d", "20d", "40d", "60d"],
                     len: 0.75,
                     x: 1.02
                   },
@@ -146,7 +146,7 @@
             x: -0.05,
             y: 1,
             buttons: [
-              { label: 'Play', method: 'animate', args: [null, { frame: { duration: 75, redraw: false }, fromcurrent: true }] },
+              { label: 'Play', method: 'animate', args: [null, { frame: { duration: 90, redraw: true }, fromcurrent: true }] },
               { label: 'Pause', method: 'animate', args: [[null], { mode: 'immediate', frame: { duration: 0, redraw: false } }] }
             ]
           }]
