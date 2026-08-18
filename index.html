@@ -146,7 +146,7 @@
             x: -0.05,
             y: 1,
             buttons: [
-              { label: 'Play', method: 'animate', args: [null, { frame: { duration: 90, redraw: true }, fromcurrent: true }] },
+              { label: 'Play', method: 'animate', args: [null, { frame: { duration: 90, redraw: true }, transition: { duration: 0 }, fromcurrent: true }] },
               { label: 'Pause', method: 'animate', args: [[null], { mode: 'immediate', frame: { duration: 0, redraw: false } }] }
             ]
           }]
